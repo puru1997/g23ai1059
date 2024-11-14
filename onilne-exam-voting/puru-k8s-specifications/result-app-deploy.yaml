@@ -1,20 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: result-app
+  name: result-app-deploy
+  labels:
+    name: result-app-deploy
+    app: demo-voting-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: result-app
+      name: result-app-pod
+      app: demo-voting-app
   template:
     metadata:
+      name: result-app-pod
       labels:
-        app: result-app
+        name: result-app-pod
+        app: demo-voting-app
     spec:
       containers:
       - name: result-app
         image: purubaranwal/onilne-exam-voting-result:latest
         ports:
-          - containerPort: 80
+        - containerPort: 80
 
