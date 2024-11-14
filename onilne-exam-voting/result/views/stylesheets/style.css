@@ -1,0 +1,110 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  font-family: 'Open Sans';
+  font-size: 16px; /* Base font size */
+}
+
+body {
+  opacity: 0;
+  transition: all 1s linear;
+}
+
+.label {
+  font-size: 24px; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.stat {
+  font-size: 48px; /* Increased font size */
+  font-weight: bold;
+}
+
+#background-stats-1 {
+  background-color: #4CAF50; /* Brighter green */
+}
+
+#background-stats-2 {
+  background-color: #F44336; /* Brighter red */
+}
+
+#content-container {
+  z-index: 2;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 80%; /* Increased width */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content-container-center {
+  text-align: center;
+}
+
+.result {
+  padding: 20px; /* Added padding */
+  margin: 20px;  /* Added margin */
+  text-align: center;
+  display: inline-block;
+  width: 40%; /* Adjust as needed */
+  vertical-align: top;
+}
+
+#background-stats {
+  z-index: 1;
+  height: 60px; /* Increased height */
+  width: 100%;
+  position: absolute;
+}
+
+#background-stats div {
+  transition: width 0.5s ease-in-out; /* Added transition */
+  display: inline-block;
+  width: 50%;
+  height: 60px; /* Match increased height */
+}
+
+.label {
+  color: #333; /* Ensure label text is readable */
+}
+
+.stat {
+  color: #333; /* Ensure stat text is readable */
+}
+
+/* Flexbox to center the content vertically and horizontally */
+body, html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Makes sure the container covers the full screen */
+}
+
+#content-container {
+  display: flex;
+  justify-content: space-around; /* Evenly spaces elements */
+  align-items: center;
+  width: 100%; /* Ensures the content takes up full width */
+}
+
+.result {
+  width: 40%; /* Adjust the width if necessary */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+

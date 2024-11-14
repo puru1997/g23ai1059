@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="examResultsApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Online Exam Survey -- Results</title>
+    <base href="/index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="online exam, results, stats">
+    <meta name="author" content="Online Exam Platform">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body ng-controller="resultsCtrl">
+    <div id="background-stats">
+      <div id="background-stats-1"></div>
+      <div id="background-stats-2"></div>
+    </div>
+    <div id="content-container">
+      <div id="content-container-center">
+        <div id="results">
+          <div class="result yes">
+            <div class="label">Yes</div>
+            <div class="stat">{{ aPercent | number:1 }}%</div>
+          </div>
+          <div class="divider"></div>
+          <div class="result no">
+            <div class="label">No</div>
+            <div class="stat">{{ bPercent | number:1 }}%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="result-summary">
+      <span ng-if="total == 0">No results available yet</span>
+      <span ng-if="total == 1">{{ total }} person voted</span>
+      <span ng-if="total >= 2">{{ total }} people voted</span>
+    </div>
+    <script src="socket.io.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
